@@ -1,0 +1,130 @@
+<div>
+  <!-- Error Message -->
+  <div *ngIf="error" class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-5 h-5 text-red-600 mr-2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+          />
+        </svg>
+        <p class="text-red-800 text-sm">{{ error }}</p>
+      </div>
+      <button
+        (click)="ngOnInit()"
+        class="text-sm text-red-600 hover:text-red-800 underline"
+        aria-label="Retry"
+      >
+        Retry
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <!-- Total Items -->
+    <div class="flex items-center justify-between p-6 bg-white rounded-2xl border shadow-sm">
+      <div>
+        <p class="text-gray-500 text-sm font-medium">Total Items</p>
+        <p class="text-2xl font-bold text-gray-900">
+          {{ loading ? '...' : kpis?.totalItems }}
+        </p>
+      </div>
+      <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+        <!-- Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6 text-blue-600"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Pending Forms -->
+    <div class="flex items-center justify-between p-6 bg-white rounded-2xl border shadow-sm">
+      <div>
+        <p class="text-gray-500 text-sm font-medium">Pending Forms</p>
+        <p class="text-2xl font-bold text-gray-900">
+          {{ loading ? '...' : kpis?.pendingForms }}
+        </p>
+      </div>
+      <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6 text-yellow-600"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6v6h4.5M12 22a10 10 0 100-20 10 10 0 000 20z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Completed -->
+    <div class="flex items-center justify-between p-6 bg-white rounded-2xl border shadow-sm">
+      <div>
+        <p class="text-gray-500 text-sm font-medium">Completed</p>
+        <p class="text-2xl font-bold text-gray-900">
+          {{ loading ? '...' : kpis?.completed }}
+        </p>
+      </div>
+      <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6 text-green-600"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Success Rate -->
+    <div class="flex items-center justify-between p-6 bg-white rounded-2xl border shadow-sm">
+      <div>
+        <p class="text-gray-500 text-sm font-medium">Success Rate</p>
+        <p class="text-2xl font-bold text-gray-900">
+          {{ loading ? '...' : kpis?.successRate }}
+        </p>
+      </div>
+      <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6 text-indigo-600"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

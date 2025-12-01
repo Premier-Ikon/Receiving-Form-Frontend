@@ -1,0 +1,20 @@
+<div
+  class="flex items-center justify-between p-6 bg-white rounded-2xl border border-gray-200 shadow-md"
+>
+  <div>
+    <p class="text-gray-500 text-sm font-medium">{{ label }}</p>
+    <p class="text-2xl font-bold text-gray-900">{{ value }}</p>
+  </div>
+  <div
+    class="w-12 h-12 rounded-full flex items-center justify-center"
+    [ngClass]="{
+      'bg-blue-100 text-blue-600': color === 'blue',
+      'bg-yellow-100 text-yellow-600': color === 'yellow',
+      'bg-green-100 text-green-600': color === 'green',
+      'bg-indigo-100 text-indigo-600': color === 'indigo'
+    }"
+  >
+    <!-- For now, just render ng-content so parent can pass SVG -->
+    <ng-content></ng-content>
+  </div>
+</div>
